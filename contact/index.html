@@ -69,6 +69,23 @@ html.benals-scroll-enabled .contact-service.bn-reveal{transform:translateY(13px)
 html.benals-scroll-enabled .contact-service.bn-visible{transform:translateY(0)!important}
 }
 @media(prefers-reduced-motion:reduce){.bn-reveal{opacity:1!important;transform:none!important;filter:none!important}}
+</style><style id="benals-scroll-motion-v2">
+/* Second motion direction: clean masked image uncovers, lift-and-settle text, subtle accent rules. */
+@media(prefers-reduced-motion:no-preference){
+html.benals-scroll-enabled .bn-reveal{filter:blur(2px)!important;transform:translate3d(0,45px,0)!important;transition:opacity 850ms cubic-bezier(.16,1,.3,1),transform 1050ms cubic-bezier(.16,1,.3,1),filter 780ms ease!important;transition-delay:var(--bn-delay,0ms)!important}
+html.benals-scroll-enabled .bn-reveal.bn-visible{filter:blur(0)!important;transform:translate3d(0,0,0)!important}
+html.benals-scroll-enabled .bn-reveal.bn-from-left{transform:translate3d(-35px,25px,0)!important}
+html.benals-scroll-enabled .bn-reveal.bn-from-right{transform:translate3d(35px,25px,0)!important}
+html.benals-scroll-enabled .bn-reveal.bn-from-left.bn-visible,html.benals-scroll-enabled .bn-reveal.bn-from-right.bn-visible{transform:translate3d(0,0,0)!important}
+html.benals-scroll-enabled .bn-reveal.bn-image-reveal{filter:none!important;clip-path:inset(0 0 95% 0);transform:translateY(15px)!important;transition:clip-path 1150ms cubic-bezier(.16,1,.3,1),transform 950ms cubic-bezier(.16,1,.3,1),opacity 650ms ease!important;transition-delay:var(--bn-delay,0ms)!important}
+html.benals-scroll-enabled .bn-reveal.bn-image-reveal.bn-visible{clip-path:inset(0 0 0 0);transform:translateY(0)!important}
+html.benals-scroll-enabled .gallery-grid .bn-reveal.bn-image-reveal{transform:none!important;clip-path:inset(0 0 100% 0)}
+html.benals-scroll-enabled .gallery-grid .bn-reveal.bn-image-reveal.bn-visible{transform:none!important;clip-path:inset(0)}
+html.benals-scroll-enabled .contact-service.bn-reveal{filter:none!important;transform:translateY(16px) scale(.985)!important}
+html.benals-scroll-enabled .contact-service.bn-visible{transform:translateY(0) scale(1)!important}
+html.benals-scroll-enabled .hero .bn-reveal{filter:none!important}
+}
+@media(prefers-reduced-motion:reduce){.bn-image-reveal{clip-path:none!important;filter:none!important;transform:none!important}}
 </style></head><body><a href="#main" class="skip">Skip to content</a><header class="site-header"><div class="nav-wrap"><a href="/" class="logo"><span class="logo-mark">B</span>BENALS <em>CONSTRUCTION</em></a><button class="menu-toggle" type="button" aria-expanded="false" aria-label="Toggle navigation">Menu ☰</button><nav class="nav-links" aria-label="Main navigation"><a href="/">Home</a><a href="/services/">Services</a><a href="/gallery/">Gallery</a><a href="/about/">About</a><a class="btn" href="/contact/">Contact ↗</a></nav></div></header><main id="main"><section class="hero internal-hero hero-construction"><div class="wrap"><div class="eyebrow">Contact</div><h1>Tell us about your project</h1><p>Call for the fastest response, or send the details below and we'll get back to you as soon as we can — usually within a business day or two.</p></div></section><section class="contact-stage" aria-labelledby="form-title"><div class="wrap contact-layout">
 <div class="contact-main"><div class="contact-heading"><span class="contact-overline"><span class="contact-pulse"></span> YOUR PROJECT STARTS HERE</span><h2 id="form-title">Let's build something <em>worth talking about.</em></h2><p>Tell us a little about what you have in mind. We'll help you figure out the next step.</p></div>
 <div class="contact-form-shell"><div class="contact-form-top"><div><span class="form-serial">01 / PROJECT INQUIRY</span><h3>Tell us about the project</h3></div><div class="form-check"><span aria-hidden="true">✓</span> FREE ESTIMATES</div></div>
@@ -103,4 +120,4 @@ document.documentElement.classList.add('benals-scroll-enabled');
 // Immediately reveal anything already on screen; no flash or invisible first viewport.
 nodes.forEach(function(el){var rect=el.getBoundingClientRect();if(rect.top<window.innerHeight*.93&&rect.bottom>0){el.classList.add('bn-visible');observer.unobserve(el)}});
 })();
-</script></body></html>
+</script><script id="benals-scroll-image-classifier">(function(){var items=document.querySelectorAll('.gallery-grid > button.bn-reveal,.family-grid > figure.bn-reveal,.about-story-photos > figure.bn-reveal,.about-grandkids.bn-reveal,.photo-stack.bn-reveal,.showcase-photo.bn-reveal,.source-photo.bn-reveal');items.forEach(function(e){e.classList.add('bn-image-reveal')})})();</script></body></html>
